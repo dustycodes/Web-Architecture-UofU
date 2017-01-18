@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  selfie: MyString
+  name: MyString
+  age_required: 1
+  prices: 1.5
+  rating: 1.5
+  user_id: 
+
+two:
+  location: MyString
+  selfie: MyString
+  name: MyString
+  age_required: 1
+  prices: 1.5
+  rating: 1.5
+  user_id: 

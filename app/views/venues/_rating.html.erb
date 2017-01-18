@@ -1,0 +1,19 @@
+<%= form_for(@venue) do |f| %>
+  <% if @venue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@venue.errors.count, "error") %> prohibited this venue from being saved:</h2>
+
+      <ul>
+      <% @venue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>%
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :rating, "Rate quality:", class: "form-control-label" %><br>
+    <%= f.number_field :rating, in: 1...6, class: "form-control" %>
+    <%= f.hidden_field :user_id, :value => current_user.id %> <br>
+    <%= f.submit 'Submit Quality Rating', :class=> 'btn btn-success' %>
+  </div>  
+<% end %>

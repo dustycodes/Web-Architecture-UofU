@@ -1,0 +1,55 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Personal Information</legend>
+    <div class="form-group">
+      <div class="field">
+	<%= f.label :name, class: "form-label" %><br>
+	<%= f.text_field :name, class: "form-control" %>
+      </div>
+      <div class="field">
+	<%= f.label :selfie, class: "form-label" %><br>
+	<%= f.url_field :selfie, class: "form-control" %>
+      </div>
+      <div class="field">
+	<%= f.label :location, class: "form-label" %><br>
+	<%= f.text_field :location, class: "form-control" %>
+      </div>
+      <div class="select">
+	<%= f.label :genre_id, class: "form-label" %><br>
+	<%= f.collection_select :genre_id, Genre.order(:title),:id, :title, {:class=> "form-control"} %>
+      </div>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Account Information</legend>
+    <div class="field-group">
+      <div class="field">
+	<%= f.label :email, class: "form-label" %><br>
+	<%= f.text_field :email, class: "form-control" %>
+      </div>
+      <div class="field">
+	<%= f.label :password, class: "form-label" %><br>
+	<%= f.password_field :password, class: "form-control" %>
+      </div>
+      <div class="field">
+	<%= f.label :password_confirmation, class: "form-label" %><br>
+	<%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+      <div class="actions">
+	<%= f.submit 'Done', :class=> 'btn btn-success'  %>
+      </div>
+    </div>
+  </fieldset>
+<% end %>

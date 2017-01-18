@@ -1,0 +1,62 @@
+@import "twitter/bootstrap/bootstrap";
+
+// Set correct font paths
+@glyphiconsEotPath: font-url("glyphicons-halflings-regular.eot");
+@glyphiconsEotPath_iefix: font-url("glyphicons-halflings-regular.eot?#iefix");
+@glyphiconsWoffPath: font-url("glyphicons-halflings-regular.woff");
+@glyphiconsTtfPath: font-url("glyphicons-halflings-regular.ttf");
+@glyphiconsSvgPath: font-url("glyphicons-halflings-regular.svg#glyphicons_halflingsregular");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: font-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: font-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: font-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: font-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: font-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/glyphicons.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @link-color: #ff0000;
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+.page-header{
+  margin: 30px 0 20px;
+}
+
+.table-nonfluid {
+  width: auto !important;
+}
+
+.fixed-width-col {
+  width: 150px;
+}
+
+legend {
+  width: inherit;
+  padding: 0 10px;
+  border-bottom: none;
+}
+
+fieldset {
+  border: 1px solid #ddd !important;
+  border-radius: 10px;
+  padding: 0 1.4em 1.4em 1.4em !important;
+  margin: 0 0 1.5em 0 !important;
+}

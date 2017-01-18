@@ -1,0 +1,29 @@
+<p id="notice"><%= notice.html_safe if notice %></p>
+
+<div class="page-header">
+  <h1>Genres <small>a bunch of different kinds</small></h1>
+</div>
+
+<table class="table table-nonfluid">
+  <thead>
+    <tr>
+      <th class="text-left fixed-width-col">Title</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @genres.each do |genre| %>
+      <tr>
+        <td><%= genre.title %></td>
+        <td><%= link_to '<button class="btn btn-info">Show</button>'.html_safe, genre %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '<button class="btn btn-success">New Genre</button>'.html_safe, new_genre_path %>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  venue_rating: 1.5
+  user_rating: 1.5
+  name: MyString
+  selfie: MyString
+  genre_id: 
+  members_id: 
+  user_id: 
+
+two:
+  venue_rating: 1.5
+  user_rating: 1.5
+  name: MyString
+  selfie: MyString
+  genre_id: 
+  members_id: 
+  user_id: 

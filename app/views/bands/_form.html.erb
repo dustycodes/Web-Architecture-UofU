@@ -1,0 +1,36 @@
+<%= form_for(@band) do |f| %>
+  <% if @band.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@band.errors.count, "error") %> prohibited this band from being saved:</h2>
+
+      <ul>
+      <% @band.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<fieldset>
+<legend>Information</legend>
+<div class="field-group">
+  <div class="field">
+    <%= f.label :name, "Name", class: "form-control-label" %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= f.label :selfie, "Selfie", class: "form-control-label" %><br>
+    <%= f.url_field :selfie, class: "form-control" %>
+  </div>
+  <div class="select">
+    <%= f.label :genre_id, "Genre", class: "form-control-label" %><br>
+    <%= f.collection_select :genre_id, Genre.order(:title),:id,:title, {:class=> "form-control"} %>
+  </div>
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+</div>
+<br>
+  <div class="actions">
+    <%= f.submit 'Create Band', :class=> 'btn btn-success' %>
+  </div>
+</fieldset>
+<% end %>
